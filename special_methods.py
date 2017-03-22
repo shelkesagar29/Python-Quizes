@@ -1,0 +1,25 @@
+# Special methods in python
+
+class methodtest:
+    hour=0 # when you define variable here, they are global
+    minutes=0
+    seconds=0
+
+    def __init__ (self,hour,minutes,seconds):# class constructors
+        self.hour=hour
+        self.minutes=minutes
+        self.seconds=seconds
+
+    def printtime(self):
+        print (self.hour,":",self.minutes,":",self.seconds)
+
+    def __str__ (self): # Method to change object representation
+        #keep in mind, for this function return type is always string
+        return str(self.hour)+":"+str(self.minutes)+":"+str(self.seconds)
+    # you can also print '%.2d:%.2d:%.2d'%(self.hour,self.minutes,self.seconds)
+
+    #printing in two different ways
+
+time=methodtest(7,45,26)
+time.printtime()
+print (time)
